@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const js = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
+assert.match(html, /id="auto-mode" type="checkbox" checked/);
+assert.match(html, /id="play-button"/);
+assert.match(html, /maximum-scale=1.*user-scalable=no/);
+assert.match(js, /elements\.auto\.checked && slideIndex < slides\.length - 1/);
+assert.match(js, /if \(isPlaying\) speakCurrentSlide\(\)/);
+assert.match(js, /speechSynthesis\?\.pause\(\)/);
+console.log('Static interaction checks passed.');

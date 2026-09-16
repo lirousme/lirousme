@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Revisão por áudio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <p class="eyebrow">Revisão guiada</p>
+      <h1>Aprenda no seu ritmo</h1>
+      <label class="auto-toggle" for="auto-mode">
+        <input id="auto-mode" type="checkbox" checked />
+        <span>Modo automático</span>
+      </label>
+      <p id="auto-help" class="helper">Ao terminar o áudio, o próximo slide começa sozinho.</p>
+    </header>
+
+    <section class="slide" aria-live="polite">
+      <p id="progress" class="progress"></p>
+      <h2 id="slide-title"></h2>
+      <p id="slide-content"></p>
+    </section>
+
+    <section class="controls" aria-label="Controles da revisão">
+      <button id="previous-button" class="secondary" type="button">‹ <span>Previous</span></button>
+      <button id="play-button" class="play" type="button" aria-label="Tocar áudio" aria-pressed="false">
+        <span id="play-icon" aria-hidden="true">▶</span><span id="play-label">Play</span>
+      </button>
+      <button id="next-button" class="secondary" type="button"><span>Next</span> ›</button>
+    </section>
+    <button id="review-button" class="review" type="button">Review e próximo slide</button>
+    <p id="status" class="status" role="status">Pronto para tocar.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
